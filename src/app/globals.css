@@ -1,0 +1,187 @@
+/* ─── Fontes ─────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400;1,6..96,500&family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
+
+/* ─── Tailwind v4 ─────────────────────────────────────────────── */
+@import 'tailwindcss' source(none);
+@source '../**/*.{js,ts,jsx,tsx}';
+
+@import 'tw-animate-css';
+
+/* ─── Tema ────────────────────────────────────────────────────── */
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  --background: #faf5ef;
+  --foreground: #2e2520;
+  --card: #ffffff;
+  --card-foreground: #2e2520;
+  --popover: #ffffff;
+  --popover-foreground: #2e2520;
+  --primary: #2e2520;
+  --primary-foreground: #faf5ef;
+  --secondary: #f2e9dd;
+  --secondary-foreground: #2e2520;
+  --muted: #f1e9df;
+  --muted-foreground: #8b7a6b;
+  --accent: #c2a079;
+  --accent-foreground: #2e2520;
+  --destructive: #b23a3a;
+  --destructive-foreground: #ffffff;
+  --border: rgba(46, 37, 32, 0.1);
+  --input: transparent;
+  --input-background: #f4ede4;
+  --switch-background: #d9cbbb;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #c2a079;
+  /* Paleta da marca */
+  --champagne: #e9d8c2;
+  --champagne-soft: #f4e9d9;
+  --rose-gold: #c89f8e;
+  --rose-gold-soft: #e7cdc1;
+  --nude: #d8c3aa;
+  --gold: #b78a52;
+  --espresso: #3a2e26;
+  --font-display: 'Bodoni Moda', serif;
+  --font-body: 'Jost', sans-serif;
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-champagne: var(--champagne);
+  --color-champagne-soft: var(--champagne-soft);
+  --color-rose-gold: var(--rose-gold);
+  --color-rose-gold-soft: var(--rose-gold-soft);
+  --color-nude: var(--nude);
+  --color-gold: var(--gold);
+  --color-espresso: var(--espresso);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    font-size: var(--font-size);
+    scroll-behavior: smooth;
+    position: relative;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .font-display { font-family: var(--font-display); }
+  .font-body    { font-family: var(--font-body); }
+
+  h1 { font-size: var(--text-2xl); font-weight: var(--font-weight-medium); line-height: 1.5; }
+  h2 { font-size: var(--text-xl);  font-weight: var(--font-weight-medium); line-height: 1.5; }
+  h3 { font-size: var(--text-lg);  font-weight: var(--font-weight-medium); line-height: 1.5; }
+  h4 { font-size: var(--text-base); font-weight: var(--font-weight-medium); line-height: 1.5; }
+
+  ::selection {
+    background: var(--rose-gold-soft);
+    color: var(--espresso);
+  }
+}
+
+@layer utilities {
+  /* Scrollbar estilizada */
+  body::-webkit-scrollbar              { width: 10px; }
+  body::-webkit-scrollbar-track       { background: transparent; }
+  body::-webkit-scrollbar-thumb       { background: rgba(46,37,32,0.14); border-radius: 999px; border: 3px solid var(--background); }
+  body::-webkit-scrollbar-thumb:hover { background: rgba(46,37,32,0.28); }
+
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  /* Superfícies de vidro */
+  .glass {
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border: 1px solid rgba(255,255,255,0.6);
+  }
+  .glass-dark {
+    background: rgba(46,37,32,0.55);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+
+  /* Texto dourado com gradiente */
+  .text-gradient-gold {
+    background: linear-gradient(120deg, #b78a52 0%, #d8b98a 40%, #c89f8e 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Brilhos ambientais suaves */
+  .glow-champagne { background: radial-gradient(closest-side, rgba(233,216,194,0.85), rgba(233,216,194,0)); }
+  .glow-rose      { background: radial-gradient(closest-side, rgba(200,159,142,0.6),  rgba(200,159,142,0)); }
+
+  .tracking-luxe { letter-spacing: 0.32em; }
+
+  /* Animações flutuantes */
+  @keyframes floaty {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-14px); }
+  }
+  .animate-floaty { animation: floaty 7s ease-in-out infinite; }
+
+  @keyframes floaty-slow {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50%       { transform: translateY(-22px) rotate(2deg); }
+  }
+  .animate-floaty-slow { animation: floaty-slow 11s ease-in-out infinite; }
+
+  @keyframes breathe {
+    0%, 100% { transform: scale(1); opacity: 0.9; }
+    50%       { transform: scale(1.06); opacity: 1; }
+  }
+  .animate-breathe { animation: breathe 5s ease-in-out infinite; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-floaty,
+    .animate-floaty-slow,
+    .animate-breathe { animation: none; }
+  }
+}

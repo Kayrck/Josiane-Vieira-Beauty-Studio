@@ -1,0 +1,15 @@
+services:
+  app:
+    build:
+      context: .
+      target: dev
+    ports:
+      - "3000:3000"
+    volumes:
+      # Monta o código-fonte do host no container (hot reload)
+      - .:/app
+      # Preserva node_modules e .next do container (não sobrescreve com o host)
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NODE_ENV=development
