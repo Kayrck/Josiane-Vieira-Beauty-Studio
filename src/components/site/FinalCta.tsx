@@ -44,8 +44,7 @@ export function FinalCta() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mx-auto mt-6 max-w-xl text-lg text-white/70"
           >
-            Reserve o seu horário e viva uma experiência de beleza pensada em cada detalhe —
-            do acolhimento ao resultado final.
+            Agende seu horário e desfrute de uma experiência de beleza cuidadosamente planejada, desde o acolhimento até o resultado final.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

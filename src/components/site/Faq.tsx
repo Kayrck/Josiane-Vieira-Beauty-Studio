@@ -19,7 +19,7 @@ export function Faq() {
           </Reveal>
           <Reveal delay={0.18}>
             <p className="mt-6 max-w-sm text-espresso/60">
-              Ainda com uma pergunta? Fale diretamente com a Josiane pelo WhatsApp — será um prazer te atender.
+              Precisa de mais informações? Converse com a Josiane pelo WhatsApp e tire todas as suas dúvidas.
             </p>
           </Reveal>
           <Reveal delay={0.24}>

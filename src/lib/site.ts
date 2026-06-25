@@ -140,7 +140,7 @@ export const DIFFERENTIALS = [
   },
   {
     title: 'Naturalidade',
-    text: 'Resultados que valorizam a sua beleza — sem exageros.',
+    text: 'Resultados que realçam a sua beleza natural, com leveza e harmonia.',
   },
   {
     title: 'Conforto & durabilidade',

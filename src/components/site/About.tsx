@@ -64,8 +64,7 @@ export function About() {
           </Reveal>
           <Reveal delay={0.24}>
             <p className="mt-4 max-w-lg leading-relaxed text-espresso/60">
-              Especialista PRO em extensão de cílios, ela acredita que cada detalhe importa — do
-              acolhimento ao resultado final. O cuidado começa muito antes do primeiro fio.
+              Especialista PRO em extensão de cílios, ela acredita que cada detalhe faz a diferença, desde o acolhimento até o resultado final. O cuidado começa muito antes da aplicação do primeiro fio.
             </p>
           </Reveal>
 

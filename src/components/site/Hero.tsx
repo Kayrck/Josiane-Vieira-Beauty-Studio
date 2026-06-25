@@ -51,8 +51,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mt-6 max-w-md text-lg leading-relaxed text-espresso/70"
           >
-            Descubra a técnica perfeita para valorizar a sua beleza natural —
-            uma experiência de cuidado, delicadeza e excelência.
+            Descubra a técnica perfeita para valorizar sua beleza natural, uma experiência de cuidado, delicadeza e excelência.
           </motion.p>
 
           <motion.div

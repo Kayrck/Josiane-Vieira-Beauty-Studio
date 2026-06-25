@@ -4,7 +4,7 @@ import { Clock, CalendarCheck, ShieldAlert, Check } from 'lucide-react'
 import { Reveal, SectionLabel, Orb } from './primitives'
 
 const ATENDIMENTO = [
-  'Tolerância de atraso de 10 minutos — após esse período será necessário remarcar.',
+  'Tolerância de atraso de até 10 minutos. Após esse período, será necessário remarcar o atendimento.',
   'Mensagens respondidas a partir das 07h00.',
   'A escolha da técnica deve ser feita antes do atendimento.',
   'Remarcações com no mínimo 3 dias de antecedência.',
@@ -55,8 +55,7 @@ export function Protocols() {
                   A remoção dos cílios é obrigatória após o período indicado.
                 </h3>
                 <p className="mt-3 max-w-2xl leading-relaxed text-white/70">
-                  Esse cuidado preserva os fios naturais, evita danos e mantém a saúde ocular —
-                  garantindo que o seu olhar continue lindo e saudável a cada nova aplicação.
+                  Esse cuidado ajuda a preservar os fios naturais, evita danos e contribui para a saúde ocular, mantendo seu olhar bonito e saudável a cada manutenção.
                 </p>
               </div>
             </div>
