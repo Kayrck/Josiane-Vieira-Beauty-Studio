@@ -20,9 +20,9 @@ const u = (id: string, w = 1200, h = 1500) =>
 
 export const IMAGES = {
   heroPortrait: u('1674932668403-33398b81c92f', 1100, 1400),
-  heroEye: u('1612864271882-5107e9e3b0ce', 800, 800),
-  heroLashes: u('1639629509821-c54cdd984227', 800, 600),
-  about: u('1616639943825-e0fbad20a3d3', 1000, 1300),
+  heroEye: '/images/hero-eye.png',
+  heroLashes: '/images/img1.png',
+  about: '/images/josiane.png',
   studio: u('1633681121751-e4a0392602b8', 1200, 900),
   beforeAfterBefore: u('1530898564308-d1ae7bb8bfec', 1200, 800),
   beforeAfterAfter: u('1639629509821-c54cdd984227', 1200, 800),
@@ -48,7 +48,7 @@ export const PROCEDURES: Procedure[] = [
     detail: 'Fio preto · volume intenso e marcante',
     maintenance: 'Exceto manutenção',
     duration: '≈ 2h30',
-    image: u('1777262080995-da4a45f51af8', 900, 1100),
+    image: '/images/mega-volume.png',
     tag: 'Mais desejado',
   },
   {
@@ -58,7 +58,7 @@ export const PROCEDURES: Procedure[] = [
     detail: 'Fio preto · efeito olhar puxado e felino',
     maintenance: 'Manutenção R$ 89,99',
     duration: '≈ 2h15',
-    image: u('1728432757040-1579d710f607', 900, 1100),
+    image: '/images/fox-eyes.png',
     tag: 'Tendência',
   },
   {
@@ -68,7 +68,7 @@ export const PROCEDURES: Procedure[] = [
     detail: 'Fios marrom e preto · profundidade natural',
     maintenance: 'Manutenção R$ 80',
     duration: '≈ 2h',
-    image: u('1603543394745-9d100843680b', 900, 1100),
+    image: '/images/volume-power.png',
   },
   {
     id: 'volume-soft',
@@ -77,7 +77,7 @@ export const PROCEDURES: Procedure[] = [
     detail: 'Fio preto · leveza e delicadeza',
     maintenance: 'Manutenção R$ 80',
     duration: '≈ 2h',
-    image: u('1588683301867-c442a9ed1389', 900, 1100),
+    image: '/images/volume-soft.png',
   },
   {
     id: 'volume-brasileiro',
@@ -86,7 +86,7 @@ export const PROCEDURES: Procedure[] = [
     detail: 'Fios marrom e preto · naturalidade absoluta',
     maintenance: 'Manutenção R$ 70',
     duration: '≈ 1h45',
-    image: u('1612864271882-5107e9e3b0ce', 900, 1100),
+    image: '/images/volume-brasileiro.png',
   },
   {
     id: 'brow-lamination',
@@ -94,7 +94,7 @@ export const PROCEDURES: Procedure[] = [
     price: 'R$ 89,99',
     detail: 'Sobrancelhas alinhadas, preenchidas e fixadas',
     duration: '≈ 1h',
-    image: u('1674049406179-d7bf2c263e71', 900, 1100),
+    image: '/images/brow-lamination.png',
   },
   {
     id: 'design-henna',
@@ -102,7 +102,7 @@ export const PROCEDURES: Procedure[] = [
     price: 'R$ 34,99',
     detail: 'Design completo · sem henna R$ 24,99',
     duration: '≈ 40min',
-    image: u('1589710751893-f9a6770ad71b', 900, 1100),
+    image: '/images/design-henna.png',
   },
   {
     id: 'lash-lifting',
@@ -110,7 +110,7 @@ export const PROCEDURES: Procedure[] = [
     price: 'R$ 89,99',
     detail: 'Curvatura natural dos seus próprios cílios',
     duration: '≈ 1h',
-    image: u('1530898564308-d1ae7bb8bfec', 900, 1100),
+    image: '/images/lash-lifting.png',
   },
 ]
 
