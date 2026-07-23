@@ -19,13 +19,13 @@ const u = (id: string, w = 1200, h = 1500) =>
   `https://images.unsplash.com/photo-${id}?w=${w}&h=${h}&fit=crop&auto=format&q=80`
 
 export const IMAGES = {
-  heroPortrait: u('1674932668403-33398b81c92f', 1100, 1400),
+  heroPortrait: '/images/hero-portrait.png',
   heroEye: '/images/hero-eye.png',
   heroLashes: '/images/img1.png',
   about: '/images/josiane.png',
   studio: u('1633681121751-e4a0392602b8', 1200, 900),
-  beforeAfterBefore: u('1530898564308-d1ae7bb8bfec', 1200, 800),
-  beforeAfterAfter: u('1639629509821-c54cdd984227', 1200, 800),
+  beforeAfterBefore: '/images/antes.png',
+  beforeAfterAfter: '/images/depois.png',
   ctaBg: u('1674049406467-824ea37c7184', 1600, 1000),
 }
 
