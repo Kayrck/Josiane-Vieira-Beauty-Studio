@@ -1,6 +1,7 @@
 'use client'
 
 import dynamic from 'next/dynamic'
+import { useEffect, useRef, useState } from 'react'
 import { Reveal, SectionLabel, BookButton } from './primitives'
 
 const LashCanvas = dynamic(
@@ -9,13 +10,32 @@ const LashCanvas = dynamic(
 )
 
 export function Gallery() {
+  const sectionRef = useRef<HTMLElement>(null)
+  const [canvasReady, setCanvasReady] = useState(false)
+
+  useEffect(() => {
+    const el = sectionRef.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setCanvasReady(true)
+          observer.disconnect()
+        }
+      },
+      { rootMargin: '300px' }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <section id="galeria" className="relative overflow-hidden bg-espresso">
+    <section id="galeria" ref={sectionRef} className="relative overflow-hidden bg-espresso">
       {/* Hero 3D */}
       <div className="relative h-[88vh] min-h-[580px] flex items-center">
-        {/* Canvas WebGL — só client side */}
+        {/* Canvas WebGL — montado só quando a seção entra no viewport */}
         <div className="absolute inset-0">
-          <LashCanvas />
+          {canvasReady && <LashCanvas />}
         </div>
 
         {/* Gradientes sobre o canvas */}

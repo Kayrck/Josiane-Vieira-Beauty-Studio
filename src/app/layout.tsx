@@ -1,5 +1,22 @@
 import type { Metadata } from 'next'
+import { Bodoni_Moda, Jost } from 'next/font/google'
 import './globals.css'
+
+const bodoniModa = Bodoni_Moda({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-display',
+  display: 'swap',
+})
+
+const jost = Jost({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+  style: ['normal', 'italic'],
+  variable: '--font-body',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'Josiane Vieira Beauty Studio | Extensão de Cílios em Acarape - CE',
@@ -35,11 +52,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      </head>
+    <html lang="pt-BR" className={`${bodoniModa.variable} ${jost.variable}`}>
       <body>{children}</body>
     </html>
   )
