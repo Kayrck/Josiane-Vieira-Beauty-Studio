@@ -1,7 +1,6 @@
 'use client'
 
 import { Canvas, useFrame } from '@react-three/fiber'
-import { PerspectiveCamera } from '@react-three/drei'
 import { useRef, useMemo, Suspense } from 'react'
 import * as THREE from 'three'
 
@@ -84,7 +83,6 @@ function GoldParticles() {
 function Scene() {
   return (
     <>
-      <PerspectiveCamera makeDefault position={[0, 0, 4.4]} fov={54} />
       <ambientLight intensity={0.12} />
       <pointLight position={[5, 3, 4]} intensity={1.4} color="#c2a079" />
       <pointLight position={[-4, -2, 2]} intensity={0.55} color="#7a4f28" />
@@ -96,7 +94,7 @@ function Scene() {
 
 export function LashCanvas() {
   return (
-    <Canvas dpr={[1, 1.5]} gl={{ antialias: true, alpha: true }} className="size-full">
+    <Canvas camera={{ position: [0, 0, 4.4], fov: 54 }} dpr={[1, 1.5]} gl={{ antialias: true, alpha: true }} className="size-full">
       <Suspense fallback={null}>
         <Scene />
       </Suspense>
