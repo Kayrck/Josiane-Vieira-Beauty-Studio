@@ -19,6 +19,7 @@ export function Gallery() {
         </div>
 
         {/* Gradientes sobre o canvas */}
+        <div className="pointer-events-none absolute inset-0 bg-espresso/60 md:hidden" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-espresso via-espresso/55 to-transparent" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-espresso via-transparent to-espresso/55" />
 

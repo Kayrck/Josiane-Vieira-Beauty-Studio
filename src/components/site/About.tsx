@@ -24,7 +24,7 @@ export function About() {
         {/* Imagem */}
         <div className="relative order-1">
           <Reveal>
-            <div className="relative aspect-[4/5] w-full max-w-[28rem] overflow-hidden rounded-[2rem] bg-champagne-soft shadow-[0_40px_90px_-30px_rgba(46,37,32,0.45)]">
+            <div className="relative mx-auto aspect-[4/5] w-full max-w-[28rem] overflow-hidden rounded-[2rem] bg-champagne-soft shadow-[0_40px_90px_-30px_rgba(46,37,32,0.45)]">
               <motion.div style={{ y }} className="absolute inset-0 -top-16 bottom-[-4rem]">
                 <ImageWithFallback
                   src={IMAGES.about}
@@ -40,7 +40,7 @@ export function About() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="glass animate-floaty absolute -bottom-6 -right-2 rounded-2xl px-6 py-5 text-center shadow-xl lg:-right-8"
+            className="glass animate-floaty absolute -bottom-6 right-3 rounded-2xl px-5 py-4 text-center shadow-xl lg:right-[-2rem]"
           >
             <p className="font-display text-[2.2rem] leading-none text-gradient-gold">+1000</p>
             <p className="mt-1 tracking-luxe text-[9px] uppercase text-espresso/60">olhares transformados</p>

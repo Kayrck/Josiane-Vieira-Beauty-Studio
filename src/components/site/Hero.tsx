@@ -19,7 +19,7 @@ export function Hero() {
       id="inicio"
       ref={ref}
       style={{ position: 'relative' }}
-      className="min-h-[100svh] overflow-hidden bg-[#f7f0e7] pb-28 pt-28 md:pt-32 lg:pb-0"
+      className="min-h-[100svh] overflow-hidden bg-[#f7f0e7] pb-36 pt-24 md:pt-32 md:pb-28 lg:pb-0"
     >
       <Orb className="left-[-10%] top-[-5%] size-[40rem] opacity-70" />
       <Orb className="bottom-[-15%] right-[-10%] size-[34rem]" variant="rose" />
@@ -58,14 +58,15 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.75 }}
-            className="mt-9 flex flex-wrap items-center gap-3"
+            className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center"
           >
             <BookButton message="agendar-agora">Agendar agora</BookButton>
             <a
               href="#procedimentos"
-              className="inline-flex items-center gap-2 rounded-full border border-espresso/20 px-7 py-3.5 text-espresso transition-colors hover:bg-espresso hover:text-primary-foreground"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-espresso/20 px-7 py-3.5 text-espresso transition-colors hover:bg-espresso hover:text-primary-foreground sm:justify-start"
             >
-              Conheça os procedimentos
+              <span className="sm:hidden">Ver procedimentos</span>
+              <span className="hidden sm:inline">Conheça os procedimentos</span>
             </a>
           </motion.div>
 

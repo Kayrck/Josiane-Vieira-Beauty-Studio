@@ -32,7 +32,7 @@ export function FinalCta() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, delay: 0.1 }}
-            className="mx-auto mt-5 max-w-3xl font-display text-[clamp(2.4rem,7vw,4.5rem)] leading-[1.02] text-white"
+            className="mx-auto mt-5 max-w-3xl font-display text-[clamp(1.9rem,7vw,4.5rem)] leading-[1.05] text-white"
           >
             Vamos transformar a sua{' '}
             <span className="italic text-gradient-gold">autoestima</span>?

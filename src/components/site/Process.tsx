@@ -41,7 +41,7 @@ export function Process() {
                     <span className="absolute -left-[2.35rem] top-1 grid size-9 place-items-center rounded-full border border-border bg-card font-display text-sm text-gold shadow-sm md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
                       {p.step}
                     </span>
-                    <div className="md:w-1/2" />
+                    <div className="hidden md:block md:w-1/2" />
                     <div className={`md:w-1/2 ${left ? 'md:pl-12 md:text-left' : 'md:pr-12 md:text-right'}`}>
                       <div className="rounded-2xl border border-border bg-card p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_24px_50px_-30px_rgba(46,37,32,0.4)]">
                         <h3 className="font-display text-xl text-espresso">{p.title}</h3>

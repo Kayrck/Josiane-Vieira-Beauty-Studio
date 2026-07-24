@@ -55,7 +55,7 @@ export function BeforeAfter() {
             onPointerLeave={() => (dragging.current = false)}
             aria-label="Comparativo antes e depois — arraste para revelar"
             role="img"
-            className="relative mx-auto mt-12 aspect-[16/10] w-full max-w-4xl cursor-ew-resize touch-none select-none overflow-hidden rounded-[1.8rem] bg-champagne-soft shadow-[0_40px_90px_-40px_rgba(46,37,32,0.5)]"
+            className="relative mx-auto mt-12 aspect-[4/3] sm:aspect-[16/10] w-full max-w-4xl cursor-ew-resize touch-none select-none overflow-hidden rounded-[1.4rem] sm:rounded-[1.8rem] bg-champagne-soft shadow-[0_40px_90px_-40px_rgba(46,37,32,0.5)]"
           >
             {/* Depois (completo) */}
             <ImageWithFallback
