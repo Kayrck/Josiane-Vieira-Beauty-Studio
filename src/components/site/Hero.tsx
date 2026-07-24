@@ -30,7 +30,7 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.5 }}
             className="flex items-center gap-3"
           >
             <span className="h-px w-8 bg-gold/60" />
@@ -48,7 +48,7 @@ export function Hero() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.55, delay: 0.4 }}
             className="mt-6 max-w-md text-lg leading-relaxed text-espresso/70"
           >
             Descubra a técnica perfeita para valorizar sua beleza natural, uma experiência de cuidado, delicadeza e excelência.
@@ -57,7 +57,7 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.75 }}
+            transition={{ duration: 0.5, delay: 0.52 }}
             className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center"
           >
             <BookButton message="agendar-agora">Agendar agora</BookButton>
@@ -73,7 +73,7 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1 }}
+            transition={{ duration: 0.5, delay: 0.65 }}
             className="mt-10 flex items-center gap-6"
           >
             <div className="flex items-center gap-1.5" aria-label="5 estrelas">
@@ -93,7 +93,7 @@ export function Hero() {
             style={{ y: yImg }}
             initial={{ opacity: 0, scale: 1.05 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="relative mx-auto aspect-[4/5] w-full max-w-[26rem] overflow-hidden rounded-[2rem] bg-champagne-soft shadow-[0_40px_90px_-30px_rgba(46,37,32,0.5)]"
           >
             <ImageWithFallback
@@ -108,7 +108,7 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, x: 30, y: 20 }}
             animate={{ opacity: 1, x: 0, y: 0 }}
-            transition={{ duration: 1, delay: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
             className="animate-floaty absolute -left-2 top-10 hidden w-40 overflow-hidden rounded-2xl border-4 border-white shadow-2xl sm:block lg:-left-6"
           >
             <ImageWithFallback
@@ -121,7 +121,7 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.85 }}
+            transition={{ duration: 0.6, delay: 0.45 }}
             className="animate-floaty-slow glass absolute -bottom-4 right-0 w-52 rounded-2xl p-4 shadow-xl lg:right-[-1rem]"
           >
             <div className="flex items-center gap-2 text-gold">
