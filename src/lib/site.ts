@@ -182,14 +182,14 @@ export const PROCESS = [
 ]
 
 export const GALLERY = [
-  u('1639629509821-c54cdd984227', 800, 1000),
-  u('1728432757040-1579d710f607', 800, 600),
-  u('1612864271882-5107e9e3b0ce', 800, 1100),
-  u('1603543394745-9d100843680b', 800, 900),
-  u('1777262080995-da4a45f51af8', 800, 1000),
-  u('1588683301867-c442a9ed1389', 800, 1200),
-  u('1530898564308-d1ae7bb8bfec', 800, 600),
-  u('1674049406179-d7bf2c263e71', 800, 900),
+  '/images/mega-volume.png',
+  '/images/fox-eyes.png',
+  '/images/brow-lamination.png',
+  '/images/volume-brasileiro.png',
+  '/images/lash-lifting.png',
+  '/images/volume-power.png',
+  '/images/design-henna.png',
+  '/images/volume-soft.png',
 ]
 
 export const FAQ = [
