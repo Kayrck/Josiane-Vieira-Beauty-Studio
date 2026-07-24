@@ -1,8 +1,6 @@
 'use client'
 
 import dynamic from 'next/dynamic'
-import { GALLERY } from '@/lib/site'
-import { ImageWithFallback } from '@/components/shared/ImageWithFallback'
 import { Reveal, SectionLabel, BookButton } from './primitives'
 
 const LashCanvas = dynamic(
@@ -52,24 +50,6 @@ export function Gallery() {
         </div>
       </div>
 
-      {/* Grade de fotos dos procedimentos */}
-      <div className="relative z-10 pb-24 px-5 md:px-10 max-w-7xl mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-          {GALLERY.map((src, i) => (
-            <Reveal key={src} delay={0.04 * i}>
-              <div className="relative aspect-[3/4] overflow-hidden rounded-xl group cursor-pointer">
-                <ImageWithFallback
-                  src={src}
-                  alt={`Resultado ${i + 1}`}
-                  className="size-full object-cover transition-transform duration-700 group-hover:scale-[1.07]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-espresso/65 via-espresso/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute inset-0 ring-1 ring-inset ring-white/0 group-hover:ring-gold/35 transition-all duration-500 rounded-xl" />
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </div>
     </section>
   )
 }
