@@ -11,8 +11,16 @@ import { Protocols } from '@/components/site/Protocols'
 import { Faq } from '@/components/site/Faq'
 import { FinalCta } from '@/components/site/FinalCta'
 import { Footer } from '@/components/site/Footer'
+import { getPublicCatalog } from '@/lib/catalog/queries'
 
-export default function Home() {
+// Página estática (rápida, servida pela CDN) que se atualiza sozinha:
+//  • na hora, quando a administradora salva algo no painel (revalidatePath nas Server Actions);
+//  • no máximo a cada 60 s, como rede de segurança para qualquer alteração feita direto no banco.
+export const revalidate = 60
+
+export default async function Home() {
+  const catalog = await getPublicCatalog()
+
   return (
     <div className="min-h-screen bg-background font-body text-foreground antialiased">
       <Navbar />
@@ -21,7 +29,7 @@ export default function Home() {
         <Hero />
         <About />
         <Differentials />
-        <Procedures />
+        <Procedures procedures={catalog.procedures} categories={catalog.categories} />
         <BeforeAfter />
         <Gallery />
         <Process />

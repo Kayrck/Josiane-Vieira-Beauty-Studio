@@ -1,5 +1,9 @@
 // Registro central de conteúdo e assets do Josiane Vieira Beauty Studio.
-// Edite aqui para atualizar textos, preços e imagens do site.
+// Edite aqui para atualizar textos e imagens institucionais do site.
+//
+// Os PROCEDIMENTOS (nome, preços, duração, foto, categoria, ativo/inativo) NÃO ficam
+// mais aqui: são gerenciados pelo painel /admin e guardados no banco (Supabase).
+// Veja src/lib/catalog e docs/ADMIN-SETUP.md.
 
 export const BRAND = {
   name: 'Josiane Vieira',
@@ -28,91 +32,6 @@ export const IMAGES = {
   beforeAfterAfter: '/images/depois.png',
   ctaBg: u('1674049406467-824ea37c7184', 1600, 1000),
 }
-
-export type Procedure = {
-  id: string
-  name: string
-  price: string
-  detail: string
-  maintenance?: string
-  duration: string
-  image: string
-  tag?: string
-}
-
-export const PROCEDURES: Procedure[] = [
-  {
-    id: 'mega-volume',
-    name: 'Mega Volume',
-    price: 'R$ 149,99',
-    detail: 'Fio preto · volume intenso e marcante',
-    maintenance: 'Exceto manutenção',
-    duration: '≈ 2h30',
-    image: '/images/mega-volume.png',
-    tag: 'Mais desejado',
-  },
-  {
-    id: 'fox-eyes',
-    name: 'Volume Fox Eyes',
-    price: 'R$ 129,99',
-    detail: 'Fio preto · efeito olhar puxado e felino',
-    maintenance: 'Manutenção R$ 89,99',
-    duration: '≈ 2h15',
-    image: '/images/fox-eyes.png',
-    tag: 'Tendência',
-  },
-  {
-    id: 'volume-power',
-    name: 'Volume Power',
-    price: 'R$ 109,99',
-    detail: 'Fios marrom e preto · profundidade natural',
-    maintenance: 'Manutenção R$ 80',
-    duration: '≈ 2h',
-    image: '/images/volume-power.png',
-  },
-  {
-    id: 'volume-soft',
-    name: 'Volume Soft / Sirena',
-    price: 'R$ 99,99',
-    detail: 'Fio preto · leveza e delicadeza',
-    maintenance: 'Manutenção R$ 80',
-    duration: '≈ 2h',
-    image: '/images/volume-soft.png',
-  },
-  {
-    id: 'volume-brasileiro',
-    name: 'Volume Brasileiro',
-    price: 'R$ 99,99',
-    detail: 'Fios marrom e preto · naturalidade absoluta',
-    maintenance: 'Manutenção R$ 70',
-    duration: '≈ 1h45',
-    image: '/images/volume-brasileiro.png',
-  },
-  {
-    id: 'brow-lamination',
-    name: 'Brow Lamination',
-    price: 'R$ 89,99',
-    detail: 'Sobrancelhas alinhadas, preenchidas e fixadas',
-    duration: '≈ 1h',
-    image: '/images/brow-lamination.png',
-  },
-  {
-    id: 'design-henna',
-    name: 'Design com Henna',
-    price: 'R$ 34,99',
-    detail: 'Design completo · sem henna R$ 24,99',
-    duration: '≈ 40min',
-    image: '/images/design-henna.png',
-  },
-  {
-    id: 'lash-lifting',
-    name: 'Lash Lifting',
-    price: 'R$ 89,99',
-    detail: 'Curvatura natural dos seus próprios cílios',
-    duration: '≈ 1h',
-    image: '/images/lash-lifting.png',
-  },
-]
 
 export const STATS = [
   { value: '+1000', label: 'Atendimentos realizados' },
