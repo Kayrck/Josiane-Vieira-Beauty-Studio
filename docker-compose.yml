@@ -11,5 +11,9 @@ services:
       # Preserva node_modules e .next do container (não sobrescreve com o host)
       - /app/node_modules
       - /app/.next
+    # Variáveis do Supabase (painel admin). Opcional: sem o arquivo, o site usa o catálogo de contingência.
+    env_file:
+      - path: .env.local
+        required: false
     environment:
       - NODE_ENV=development

@@ -12,6 +12,12 @@ CMD ["npm", "run", "dev", "--", "--hostname", "0.0.0.0"]
 
 # ── builder ───────────────────────────────────────────────────────────────────
 FROM deps AS builder
+# Variáveis públicas do Supabase são embutidas no build:
+#   docker build --build-arg NEXT_PUBLIC_SUPABASE_URL=... --build-arg NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=... .
+ARG NEXT_PUBLIC_SUPABASE_URL
+ARG NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
+ENV NEXT_PUBLIC_SUPABASE_URL=$NEXT_PUBLIC_SUPABASE_URL
+ENV NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=$NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
 COPY . .
 RUN npm run build
 

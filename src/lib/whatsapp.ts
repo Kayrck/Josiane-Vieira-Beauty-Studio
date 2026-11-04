@@ -1,13 +1,6 @@
 export const PHONE = '5585996614346'
 
 export const WA_MESSAGES = {
-  // Procedimentos específicos
-  'mega-volume': `Olá, Josiane!\n\nGostaria de agendar um horário para realizar o procedimento *Mega Volume*.\n\nVi o atendimento pelo site e gostaria de consultar os horários disponíveis.\n\nAguardo seu retorno. 😊`,
-  'fox-eyes': `Olá, Josiane!\n\nTenho interesse em realizar o procedimento *Volume Fox Eyes*.\n\nGostaria de verificar disponibilidade de datas e horários.\n\nObrigada!`,
-  'volume-brasileiro': `Olá, Josiane!\n\nGostaria de agendar um horário para fazer o procedimento *Volume Brasileiro*.\n\nPoderia me informar os próximos horários disponíveis?`,
-  'brow-lamination': `Olá, Josiane!\n\nTenho interesse em realizar o procedimento *Brow Lamination*.\n\nGostaria de agendar um horário.`,
-  'design-henna': `Olá, Josiane!\n\nGostaria de marcar um horário para realizar o procedimento *Design com Henna*.\n\nQuais horários você possui disponíveis?`,
-  'lash-lifting': `Olá, Josiane!\n\nGostaria de agendar um horário para fazer o procedimento *Lash Lifting*.\n\nVi seu trabalho pelo site e gostaria de mais informações.`,
   // CTAs gerais
   'agendar-agora': `Olá, Josiane!\n\nConheci seu trabalho através do site e gostaria de agendar um atendimento.\n\nPoderia me informar quais horários estão disponíveis?`,
   'entrar-em-contato': `Olá, Josiane!\n\nConheci seu trabalho pelo site e gostaria de conversar sobre seus procedimentos.\n\nPoderia me passar algumas informações?`,
@@ -15,6 +8,23 @@ export const WA_MESSAGES = {
 } as const
 
 export type WaMessageKey = keyof typeof WA_MESSAGES
+
+/**
+ * Mensagens específicas por procedimento, indexadas pelo `slug` (que nunca muda).
+ * `{name}` é trocado pelo nome ATUAL do procedimento: se o nome for editado no painel,
+ * a mensagem do WhatsApp acompanha. Procedimentos novos, sem texto próprio aqui,
+ * usam a mensagem padrão.
+ */
+const PROCEDURE_MESSAGES: Record<string, string> = {
+  'mega-volume': `Olá, Josiane!\n\nGostaria de agendar um horário para realizar o procedimento *{name}*.\n\nVi o atendimento pelo site e gostaria de consultar os horários disponíveis.\n\nAguardo seu retorno. 😊`,
+  'fox-eyes': `Olá, Josiane!\n\nTenho interesse em realizar o procedimento *{name}*.\n\nGostaria de verificar disponibilidade de datas e horários.\n\nObrigada!`,
+  'volume-brasileiro': `Olá, Josiane!\n\nGostaria de agendar um horário para fazer o procedimento *{name}*.\n\nPoderia me informar os próximos horários disponíveis?`,
+  'brow-lamination': `Olá, Josiane!\n\nTenho interesse em realizar o procedimento *{name}*.\n\nGostaria de agendar um horário.`,
+  'design-henna': `Olá, Josiane!\n\nGostaria de marcar um horário para realizar o procedimento *{name}*.\n\nQuais horários você possui disponíveis?`,
+  'lash-lifting': `Olá, Josiane!\n\nGostaria de agendar um horário para fazer o procedimento *{name}*.\n\nVi seu trabalho pelo site e gostaria de mais informações.`,
+}
+
+const DEFAULT_PROCEDURE_MESSAGE = `Olá, Josiane!\n\nGostaria de agendar um horário para realizar o procedimento *{name}*.\n\nVi o atendimento pelo site e gostaria de consultar os horários disponíveis.\n\nAguardo seu retorno. 😊`
 
 /**
  * Gera uma URL do WhatsApp com mensagem personalizada.
@@ -28,11 +38,12 @@ export function waLink(messageOrKey?: WaMessageKey | (string & {})): string {
 
 /**
  * Gera URL do WhatsApp para um procedimento específico.
- * Usa mensagem personalizada se existir em WA_MESSAGES; caso contrário, cria uma genérica.
+ * Usa a mensagem própria do procedimento (pelo slug) ou a padrão, sempre com o nome atual.
  */
-export function procedureWaLink(procedureId: string, procedureName: string): string {
-  const predefined = (WA_MESSAGES as Record<string, string>)[procedureId]
-  if (predefined) return `https://wa.me/${PHONE}?text=${encodeURIComponent(predefined)}`
-  const msg = `Olá, Josiane!\n\nGostaria de agendar um horário para realizar o procedimento *${procedureName}*.\n\nVi o atendimento pelo site e gostaria de consultar os horários disponíveis.\n\nAguardo seu retorno. 😊`
-  return `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`
+export function procedureWaLink(procedureSlug: string, procedureName: string): string {
+  const template = PROCEDURE_MESSAGES[procedureSlug] ?? DEFAULT_PROCEDURE_MESSAGE
+  // Remove marcadores de formatação do WhatsApp (* _ ~ `) do nome para não quebrar o texto.
+  const name = procedureName.replace(/[*_~`]/g, '').trim()
+  const message = template.split('{name}').join(name)
+  return `https://wa.me/${PHONE}?text=${encodeURIComponent(message)}`
 }
