@@ -117,7 +117,9 @@ where email = 'josiane@exemplo.com';
 
 ## 6. Variáveis de ambiente
 
-Pegue os valores em **Project Settings → API Keys** (e a URL em **Project Settings → Data API**, campo *Project URL*).
+O caminho mais fácil: no projeto do Supabase, clique em **Connect** (botão no topo da página), escolha o framework **Next.js** e copie as duas
+variáveis, que já aparecem com os nomes certos. Alternativa: **Project Settings → API Keys** (chave *Publishable*, que começa com `sb_publishable_`)
+e a *Project URL* em **Integrations → Data API**.
 
 | Variável | Valor | Observações |
 |---|---|---|
@@ -128,7 +130,9 @@ Pegue os valores em **Project Settings → API Keys** (e a URL em **Project Sett
 > A chave "publishable" é pública por desenho: quem protege os dados são as regras RLS do banco.
 
 **Na Vercel:** *Project → Settings → Environment Variables* → cadastre as duas variáveis para **Production**
-(e **Preview**, se quiser testar branches) → **Redeploy** (*Deployments → ⋯ → Redeploy*).
+(e **Preview**, se quiser testar branches) → **Redeploy** (*Deployments → ⋯ → Redeploy*). As variáveis `NEXT_PUBLIC_*` são embutidas
+no momento do build, então **só valem depois de um novo deploy**. Se o aviso "Painel ainda não configurado" persistir, refaça o Redeploy
+desmarcando *Use existing Build Cache*.
 
 **Local:** copie `.env.example` para `.env.local` e preencha os mesmos valores.
 
