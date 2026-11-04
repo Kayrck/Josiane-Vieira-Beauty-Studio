@@ -1,13 +1,14 @@
 'use client'
 
-import { Instagram, MessageCircle, MapPin, Clock } from 'lucide-react'
+import { Instagram, MessageCircle, MapPin, Clock, Lock } from 'lucide-react'
 import { BRAND, NAV_LINKS } from '@/lib/site'
 import { waLink } from '@/lib/whatsapp'
 
 export function Footer() {
   return (
     <footer className="border-t border-border bg-background">
-      <div className="mx-auto max-w-7xl px-5 py-16 md:px-10">
+      {/* pb-28 abaixo de lg: a barra fixa "Agende seu olhar" (mobile/tablet) não cobre a última linha do rodapé */}
+      <div className="mx-auto max-w-7xl px-5 pb-28 pt-16 md:px-10 lg:pb-16">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
           {/* Marca */}
           <div className="md:col-span-5">
@@ -93,7 +94,20 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 text-sm text-muted-foreground md:flex-row">
           <p>© {new Date().getFullYear()} {BRAND.full}. Todos os direitos reservados.</p>
-          <p>Políticas de atendimento e reserva · {BRAND.instagramHandle}</p>
+          <div className="flex flex-col items-center gap-4 md:flex-row md:gap-6">
+            <p>Políticas de atendimento e reserva · {BRAND.instagramHandle}</p>
+            {/* Acesso discreto ao painel da equipe. Link comum (sem prefetch): não pesa no site público,
+                e o painel continua exigindo login. O ::before amplia a área de toque no celular. */}
+            <a
+              href="/admin/login"
+              rel="nofollow"
+              title="Entrar no painel administrativo"
+              className="relative inline-flex items-center gap-1.5 rounded-full border border-espresso/15 px-3 py-1.5 text-xs text-espresso/70 transition-colors before:absolute before:-inset-2 before:content-[''] hover:border-espresso/40 hover:text-espresso"
+            >
+              <Lock className="size-3" aria-hidden />
+              Área restrita
+            </a>
+          </div>
         </div>
       </div>
     </footer>

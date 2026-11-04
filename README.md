@@ -35,7 +35,7 @@ Os procedimentos (nome, preços, duração, foto, categoria e status) são admin
 - FAQ com accordion
 - Layout responsivo (mobile-first)
 - Metadata, Open Graph e robots.txt configurados
-- **Painel administrativo** (`/admin`): login, dashboard, cadastro/edição, valores de aplicação e manutenção, envio de fotos pelo celular, categorias e ativar/inativar (exclusão lógica)
+- **Painel administrativo** (`/admin`): login, dashboard, cadastro/edição, valores de aplicação e manutenção, envio de fotos pelo celular, categorias e ativar/inativar (exclusão lógica); um botão discreto **Área restrita** no rodapé do site leva ao login
 
 ## Executando localmente
 
