@@ -138,7 +138,7 @@ Pegue os valores em **Project Settings → API Keys** (e a URL em **Project Sett
 
 ## 7. Testar
 
-1. Abra `https://SEU-SITE/admin` → faça login com o e-mail e a senha criados.
+1. Abra `https://SEU-SITE/admin` (ou toque em **Área restrita**, o botão pequeno no rodapé do site) → faça login com o e-mail e a senha criados.
 2. Altere o preço de um procedimento, salve e abra o site em outra aba/aparelho: o novo preço já aparece.
 3. Cadastre um procedimento de teste com foto, depois **inative**, confira que sumiu do site e **reative**.
 
@@ -148,6 +148,7 @@ Pegue os valores em **Project Settings → API Keys** (e a URL em **Project Sett
 
 | Quero... | Como |
 |---|---|
+| Entrar no painel | Botão **Área restrita** no rodapé do site (ou `/admin` no navegador) |
 | Mudar preço, duração, foto, nome | **Procedimentos → Editar** → altere → **Salvar alterações** |
 | Cadastrar um novo | **+ Novo procedimento** → preencha → **Cadastrar procedimento** |
 | Cadastrar valor de manutenção | No formulário, em **Outros valores**, toque em **+ Manutenção** e informe o valor |
